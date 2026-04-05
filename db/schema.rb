@@ -40,6 +40,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_04_04_131536) do
   end
 
   create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.text "body"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -54,11 +57,12 @@ ActiveRecord::Schema[8.0].define(version: 2026_04_04_131536) do
   end
 
   create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.text "introduction"
     t.string "email_address", null: false
     t.string "password_digest", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "name"
     t.index ["email_address"], name: "index_users_on_email_address", unique: true
   end
 

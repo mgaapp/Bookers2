@@ -1,1 +1,14 @@
 <h1>welcome to Bookers !!</h1>
+<br>In Bookers,
+<br>you can share and exchange your opinions , inpressions , and emotions
+<br>about various books!
+
+<%= form_with url: session_path do |form| %>
+ <div>
+  <%= form.submit "Log in" %>
+ </div>
+ <div>
+ <br><%= form.submit "Sign in" %>
+ </div>
+<% end %>
+<br>
