@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  allow_unauthenticated_access only: [:new, :create] 
-
+   allow_unauthenticated_access only: [:new, :create]
+   
   def new
     @user = User.new
   end
@@ -8,11 +8,24 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to new_session_path, notice: 
+      redirect_to books_path, notice: 
     else
       render :new, status: :unprocessable_entity
     end
   end
+  
+  def show
+    @user = User.find(params[:id])
+    @books = @user.books
+  end
+  
+def update
+    @user = User.find(params[:id])
+    user.update(user_params)
+    redirect_to user_path(@user.id)
+  end
+
+
 
  private
 
