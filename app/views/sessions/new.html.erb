@@ -1,3 +1,15 @@
+  <header>
+  <ul>
+  <% if authenticated? %>
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'About', homes_about_path %></li>
+    <li><%= link_to 'Sign up', new_user_path %></li>
+    <li><%= link_to "Log in", new_session_path %></li>
+    <% end %>
+    </ul>
+    </header>
+
+
 <h2>Log in</h2>
 
 <%= tag.div(flash[:alert], style: "color:red") if flash[:alert] %>

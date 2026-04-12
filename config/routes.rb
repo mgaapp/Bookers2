@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
+  resource :session , only: [:new, :create, :destroy], path: 'users', path_names: { new: 'sign_in' }
   resources :users, only: [:new, :create, :show, :edit, :update] , path_names: { new: 'sign_up' }
-  resource :session
   resources :books, only: [:new, :create, :index, :show, :destroy]
 
   root to: "homes#top"

@@ -1,3 +1,15 @@
+  <header>
+  <ul>
+  <% if authenticated? %>
+    <li><%= link_to 'Home', root_path %></li>
+    <li><%= link_to 'About', homes_about_path %></li>
+    <li><%= link_to 'Sign up', new_user_path %></li>
+    <li><%= link_to "Log in", new_session_path %></li>
+    <% end %>
+    </ul>
+    </header>
+
+
 <h1>welcome to Bookers !!</h1>
 <br>In Bookers,
 <br>you can share and exchange your opinions , inpressions , and emotions
