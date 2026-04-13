@@ -1,0 +1,46 @@
+<header>
+  <ul>
+ <li><%= link_to 'Home', root_path %></li>
+  <li><%= link_to 'Users', user_path%></li>
+<li><%= link_to 'Books', books_path(@book) %></li>
+<li><%= link_to "Log out", session_path, data: { turbo_method: :delete } %></li>
+ </ul>
+ </header>
+
+
+
+
+<h2>User info</h2>
+
+
+<!-- ユーザーの詳細 -->
+<div>
+  <h3><%= @user.name %></h3>
+  <%= image_tag @user.get_profile_image(100,100) %>
+</div>
+
+<!-- ユーザーの投稿一覧 -->
+<% @books.each do |post_image| %>
+<p>投稿ユーザー画像：<%= image_tag post_image.user.get_profile_image(100,100) %></p>
+ <p>name ユーザーネーム：<%= post_image.user.name %></p>
+
+
+<div>
+ <p>Title：<%= post_image.title %></p>
+  <p>Opinion：<%= post_image.body %></p> 
+</div>
+<% end %>
+
+<h1>New book</h1>
+<!-- form_with部分 -->
+<%= form_with model: @book do |f| %>
+  <h4>Title</h4>
+  <%= f.text_field :title %>
+	
+  <h4>Opinion</h4>
+  <%= f.text_area :body %>
+	
+  
+  <%= f.submit "Create Book" %>
+
+<% end %>
