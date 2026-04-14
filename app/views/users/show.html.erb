@@ -15,19 +15,28 @@
 
 <!-- ユーザーの詳細 -->
 <div>
-  <h3><%= @user.name %></h3>
+  <h3>name:<%= @user.name %></h3>
   <%= image_tag @user.get_profile_image(100,100) %>
+  <h5>introduction:<%= @user.introduction %></h5>
 </div>
+<% if @user == @user %>
+    <p><%= link_to "プロフィール編集", edit_user_path(@user) %></p>
+  <% end %>
 
 <!-- ユーザーの投稿一覧 -->
 <% @books.each do |book| %>
+  <div>
   <p>投稿ユーザー画像：<%= image_tag book.user.get_profile_image(100,100) %></p>
   <p>name ユーザーネーム：<%= book.user.name %></p>
-  <div>
-    <p>Title：<%= book.title %></p>
-    <p>Opinion：<%= book.body %></p> 
+  <p>Title：<%= book.title %></p>
+  <p>Opinion：<%= book.body %></p> 
+   <% if book.user == current_user %>
+    <%= link_to "Edit", edit_book_path(post_image) %> |
+    <%= link_to "Destroy", book_path(book), method: :delete, data: { confirm: '本当に削除しますか？' } %>
+  <% end %>
   </div>
 <% end %>
+
 
 <h1>New book</h1>
 <!-- form_with部分 -->

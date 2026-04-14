@@ -16,7 +16,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @books = @user.books.includes(user: { profile_image_attachment: :blob })
+    @books = @user.books
     @book = Book.new
   end
 
@@ -37,7 +37,7 @@ def update
 
   def user_params
     # name, email_address, password, password_confirmation を許可
-    params.require(:user).permit(:title, :body)
+    params.require(:user).permit(:name, :introduction)
   end
 
 end

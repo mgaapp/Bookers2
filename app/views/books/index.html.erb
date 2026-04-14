@@ -12,6 +12,8 @@
 
 </div>
 
+
+
 <!-- ユーザーの投稿一覧 -->
 <% @books.each do |post_image| %>
 <p>投稿ユーザー画像：<%= image_tag post_image.user.get_profile_image(100,100) %></p>
@@ -23,6 +25,7 @@
   <p>本文：<%= post_image.body %></p> 
 </div>
 <% end %>
+
 
 <h1>New book</h1>
 <!-- form_with部分 -->

@@ -11,4 +11,12 @@ class ApplicationController < ActionController::Base
   def after_logout_url
     root_path
   end
+
+
+ helper_method :current_user
+
+  def current_user
+    # sessionなどからユーザーIDを取得し、該当ユーザーを返すロジック
+    @current_user ||= User.find_by(id: session[:user_id])
+  end
 end

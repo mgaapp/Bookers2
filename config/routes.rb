@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resource :session , only: [:new, :create, :destroy], path: 'users', path_names: { new: 'sign_in' }
   resources :users, only: [:new, :create, :show, :edit, :update] , path_names: { new: 'sign_up' }
-  resources :books, only: [:new, :create, :index, :show, :destroy]
+  resources :books, only: [:new, :create, :index, :show, :destroy, :update, :edit]
 
   root to: "homes#top"
   get 'homes/about', to: 'homes#about'

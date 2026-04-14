@@ -5,11 +5,14 @@ class BooksController < ApplicationController
 
 def show
     @book = Book.find(params[:id])  # 正しく取得できているか
+    @user = @book.user
+    @books = @book.user.books
+
   end
 
 # 投稿データの保存
   def create
-    @book = Book.new(books_params)
+    @book = Book.new(book_params)
     @book.user_id = Current.user.id
     if @book.save
     redirect_to books_path
@@ -25,8 +28,12 @@ def show
 
 def destroy
     book = Book.find(params[:id])
+    if book.user == current_user
     book.destroy
     redirect_to books_path
+    else
+    redirect_to books_path, alert: '削除する権限がありません'
+  end
   end
 
   def edit
@@ -46,7 +53,7 @@ def destroy
    # 投稿データのストロングパラメータ
   private
 
-  def books_params
+  def book_params
     params.require(:book).permit(:title, :body)
   end
 end
