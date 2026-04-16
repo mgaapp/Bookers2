@@ -8,9 +8,9 @@ class SessionsController < ApplicationController
   def create
     if (user = User.find_by(name: params[:name]))&.authenticate(params[:password]) 
       start_new_session_for user
-      redirect_to user_path(user.id)
+      redirect_to user_path(user.id), notice: "Signed in successfully."
     else
-      redirect_to new_session_path, alert: "Try another email address or password."
+      redirect_to new_session_path
     end
   end
 

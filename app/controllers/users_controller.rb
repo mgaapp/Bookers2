@@ -1,43 +1,56 @@
 class UsersController < ApplicationController
-   allow_unauthenticated_access only: [:new, :create]
-   
+  allow_unauthenticated_access only: [:new, :create]
+
   def new
     @user = User.new
   end
 
+
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to books_path, notice: 
+      redirect_to books_path, notice: "Signed in successfully."
     else
       render :new, status: :unprocessable_entity
     end
   end
-  
-  def show
-    @user = User.find(params[:id])
-    @books = @user.books
+
+
+  def index
+    @users = User.all
     @book = Book.new
   end
 
- def edit
-    @user = User.find(params[:id])
-  end 
 
-
-def update
+  def show
     @user = User.find(params[:id])
-    @user.update(user_params)
-    redirect_to user_path(@user.id)
+    @books = @user.books.order(created_at: :desc)
+    @book = Book.new
   end
 
 
+  def edit
+    @user = User.find(params[:id])
+  end
 
- private
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to user_path(@user), notice: "You have updated user successfully."
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
+
+  private
+
 
   def user_params
-    # name, email_address, password, password_confirmation を許可
-    params.require(:user).permit(:name, :introduction)
+    params.require(:user).permit(:name, :introduction, :profile_image)
   end
-
 end
+
+
+
