@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   allow_unauthenticated_access only: [:new, :create]
+  before_action :is_matching_login_user, only: [:edit, :update]
+  
 
   def new
     @user = User.new
@@ -9,7 +11,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to books_path, notice: "Signed in successfully."
+      start_new_session_for @user
+      redirect_to after_authentication_url
     else
       render :new, status: :unprocessable_entity
     end
@@ -19,6 +22,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
     @book = Book.new
+    @user = current_user
   end
 
 
@@ -32,6 +36,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find(params[:id])
   end
+    
 
 
   def update
@@ -46,11 +51,18 @@ class UsersController < ApplicationController
 
   private
 
-
-  def user_params
-    params.require(:user).permit(:name, :introduction, :profile_image)
+  def is_matching_login_user
+  user = User.find(params[:id])
+  unless user == current_user
+    redirect_to root_path, alert: "You are not authorized to edit this user."
   end
 end
+
+  def user_params
+    params.require(:user).permit(:name, :introduction, :profile_image, :email_address, :password, :password_confirmation)
+  end
+end
+
 
 
 

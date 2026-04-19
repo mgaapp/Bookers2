@@ -1,5 +1,8 @@
 <h2>Sign up</h2>
 
+<div>
+  <%= flash[:notice] %>
+</div>
 <%= form_with model: @user, url: users_path do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">

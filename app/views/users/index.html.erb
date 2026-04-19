@@ -1,3 +1,39 @@
+<main>
+<div class="row">
+<div class="col-3">
+
+
 <%= render 'list', user: @user %>
+</div>
+<div class="col-md-8 offset-md-1">
+ <h2>User</h2>
+ <table class="table table-hover">
+  <thead>
+   <tr>
+    <th></th>
+    <th>image</th>
+    <th>name</th>
+    <th colspan="3"></th>
+  </tr>
+  </thead>
+  <tbody> 
+  <!-- ユーザーの投稿一覧 -->
+<%= form_with model: @user do |f| %>
+  <%= f.text_field :profile_image %>
+	
+  <%= f.text_area :name %>
+	
+  
+  <%= f.submit "Create Book" %>
+<% end %>
 
+  <tr>
+ 
+  
+  </tr>
 
+ </tbody>
+  </table>
+  </div>
+</div>
+</main>

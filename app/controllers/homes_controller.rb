@@ -1,6 +1,6 @@
 class HomesController < ApplicationController
-allow_unauthenticated_access only: [:top]
-layout false, only: [:about]
+allow_unauthenticated_access only: [:top, :about]
+
 
     def top
     

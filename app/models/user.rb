@@ -8,8 +8,8 @@ class User < ApplicationRecord
   has_one_attached :profile_image
 
   validates :name, presence: true
-  validates :email_address, uniqueness: true
-
+  validates :email_address, presence: true, uniqueness: true
+validates :password, length: { minimum: 6 }, if: -> { password.present? }
 
   def get_profile_image(width, height)
     unless profile_image.attached?
