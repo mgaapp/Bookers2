@@ -20,6 +20,7 @@
 
 
 <main>
+<div class="container">
 <div class="row">
 <div class="col-3">
 <%= render 'list', user: @user %>
@@ -39,7 +40,7 @@
   <!-- ユーザーの投稿一覧 -->
 <% @books.each do |book| %>
   <tr>
-  <td><%= image_tag book.user.get_profile_image(100,100) %></td>
+<td><%= link_to image_tag(book.user.get_profile_image(100,100)), user_path(book.user) %></td>
   <td><%= link_to book.title, book_path(book) %></td>
   <td><%= book.body %></td> 
   </tr>

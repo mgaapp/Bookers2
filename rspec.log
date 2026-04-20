@@ -1,0 +1,42 @@
+
+An error occurred while loading ./spec.
+[31mFailure/Error: __send__(method, file)[0m
+[31m[0m
+[31mLoadError:[0m
+[31m  cannot load such file -- /home/ubuntu/environment/Bookers2/spec[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/rspec-core-3.13.6/lib/rspec/core/configuration.rb:2144:in `load'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/rspec-core-3.13.6/lib/rspec/core/configuration.rb:2144:in `load_file_handling_errors'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/rspec-core-3.13.6/lib/rspec/core/configuration.rb:1643:in `block in load_spec_files'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/rspec-core-3.13.6/lib/rspec/core/configuration.rb:1641:in `each'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/rspec-core-3.13.6/lib/rspec/core/configuration.rb:1641:in `load_spec_files'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/rspec-core-3.13.6/lib/rspec/core/runner.rb:102:in `setup'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/rspec-core-3.13.6/lib/rspec/core/runner.rb:86:in `run'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/rspec-core-3.13.6/lib/rspec/core/runner.rb:71:in `run'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/rspec-core-3.13.6/lib/rspec/core/runner.rb:45:in `invoke'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/rspec-core-3.13.6/exe/rspec:4:in `<top (required)>'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/bin/rspec:25:in `load'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/bin/rspec:25:in `<top (required)>'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/lib/bundler/cli/exec.rb:61:in `load'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/lib/bundler/cli/exec.rb:61:in `kernel_load'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/lib/bundler/cli/exec.rb:24:in `run'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/lib/bundler/cli.rb:504:in `exec'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/lib/bundler/vendor/thor/lib/thor/command.rb:28:in `run'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/lib/bundler/vendor/thor/lib/thor/invocation.rb:127:in `invoke_command'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/lib/bundler/vendor/thor/lib/thor.rb:538:in `dispatch'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/lib/bundler/cli.rb:35:in `dispatch'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/lib/bundler/vendor/thor/lib/thor/base.rb:584:in `start'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/lib/bundler/cli.rb:29:in `start'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/exe/bundle:28:in `block in <top (required)>'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/lib/bundler/friendly_errors.rb:118:in `with_friendly_errors'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/lib/ruby/gems/3.3.0/gems/bundler-4.0.7/exe/bundle:20:in `<top (required)>'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/bin/bundle:25:in `load'[0m
+[36m# /home/ubuntu/.rbenv/versions/3.3.6/bin/bundle:25:in `<main>'[0m
+[36m# [0m
+[36m#   Showing full backtrace because every line was filtered out.[0m
+[36m#   See docs for RSpec::Configuration#backtrace_exclusion_patterns and[0m
+[36m#   RSpec::Configuration#backtrace_inclusion_patterns for more information.[0m
+No examples found.
+
+Finished in 0.00005 seconds (files took 0.21145 seconds to load)
+[31m0 examples, 0 failures, 1 error occurred outside of examples[0m
+

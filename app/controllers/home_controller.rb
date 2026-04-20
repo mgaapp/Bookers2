@@ -1,4 +1,4 @@
-class HomesController < ApplicationController
+class HomeController < ApplicationController
 allow_unauthenticated_access only: [:top, :about]
 
 

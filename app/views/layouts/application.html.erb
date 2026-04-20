@@ -35,17 +35,25 @@
    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="navbar-collapse collapse show" id="navbarNavDropdown" style="">
+        <div class="navbar-collapse collapse show" id="navbarNavDropdown" style="">
 
 
     <ul class="navbar-nav ms-auto">
-             <li><%= link_to root_path, class: "nav-link text-light" do %>
-          <i class="fa-solid fa-home"></i>
-          Home
-          <% end %>
-          </li> 
+    <li>
     <% if authenticated? %>
-
+      <%= link_to user_path(current_user), class: "nav-link text-light" do %>
+        <i class="fa-solid fa-home"></i>
+        Home
+      <% end %>
+    <% else %>
+      <%= link_to root_path, class: "nav-link text-light" do %>
+        <i class="fa-solid fa-home"></i>
+        Home
+      <% end %>
+    <% end %>
+  </li>
+    <% if authenticated? %>
+  
           <li><%= link_to users_path, class: "nav-link text-light" do %>
           <i class="fa-solid fa-users"></i>
            Users
@@ -62,18 +70,18 @@
              <% end %>
              </li>
           <% else %>
-          <li><%= link_to homes_about_path, class: "nav-link text-light" do %>
+          <li><%= link_to home_about_path, class: "nav-link text-light" do %>
             <i class="fa-solid fa-link"></i>
            About
            <% end %>
            </li>
-          <li><%= link_to new_user_path, class: "nav-link text-light" do %>
+          <li><%= link_to '/users/sign_up', class: "nav-link text-light" do %>
           <i class="fa-solid fa-user-plus"></i>
              Sign up
           <% end %>
             </li>
         
-          <li><%= link_to new_session_path, class: "nav-link text-light" do %>
+          <li><%= link_to '/session/new', class: "nav-link text-light" do %>
           <i class="fa-solid fa-sign-in-alt"></i>
           Log in
            <% end %>
@@ -84,6 +92,7 @@
          </nav>
 
    </header>
+
 
 
 
