@@ -24,7 +24,7 @@
 
 <h2 class="mt-3">New book</h2>
 <!-- form_with部分 -->
-<%= form_with model: @book do |f| %>
+<%= form_with model: current_user.books.new do |f| %>
     <div class="form-group">
     <%= f.label :title, "Title" %>
     <%= f.text_field :title, class: "form-control book_title" %>

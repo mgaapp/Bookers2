@@ -1,6 +1,7 @@
 class BooksController < ApplicationController
   before_action :require_authentication
   before_action :set_book, only: [:show, :edit, :update, :destroy]
+  before_action :is_matching_login_user, only: [:edit, :update] 
 
   def new
     @book = Book.new
@@ -56,12 +57,20 @@ class BooksController < ApplicationController
 
   private
 
+  def is_matching_login_user
+    book = Book.find(params[:id]) 
+    unless book.user_id == current_user.id
+    redirect_to books_path 
+    end 
+  end
+
   def set_book
     @book = Book.find(params[:id])
   end
-
+  
   def book_params
     params.require(:book).permit(:title, :body)
   end
 end
+
 

@@ -35,6 +35,7 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find(params[:id])
+
   end
     
 
@@ -54,7 +55,7 @@ class UsersController < ApplicationController
   def is_matching_login_user
   user = User.find(params[:id])
   unless user == current_user
-    redirect_to root_path, alert: "You are not authorized to edit this user."
+    redirect_to user_path(current_user), alert: "You are not authorized to edit this user."
   end
 end
 
